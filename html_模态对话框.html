@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin:0;
+        }
+        .hide {
+            display:none !important;
+        }
+        .shade {
+            position:fixed;
+            top:0;
+            bottom:0;
+            right:0;
+            left:0;
+            background-color: black;
+            opacity:0.5;
+            z-index:1000;
+        }
+
+        .modal {
+            height:200px;
+            width:400px;
+            background-color: white;
+            position:fixed;
+            top:50%;
+            left:50%;
+            margin-left:-200px;
+            margin-right:100px;
+            z-index:1001;
+        }
+    </style>
+</head>
+<body>
+    <div style="height:2000px;background-color: grey; opacity:0.5;">
+        <input type="button" value="hit me" onclick="Hide()"/></div>
+    <div id="shade" class="shade hide"></div>
+    <div id="modal" class="modal hide">
+        <textarea type="text" style="height:200px;width:400px;">请输入内容</textarea>
+        <input type="button" value="返回" style="margin-left:363px;" onclick="Back()"/>
+    </div>
+
+
+    <script>
+        function Hide() {
+            tag1 = document.getElementById('shade');
+            tag1.classList.remove('hide');
+            tag2= document.getElementById('modal');
+            tag2.classList.remove('hide');
+        }
+
+        function Back() {
+             tag1 = document.getElementById('shade');
+            tag1.classList.add('hide');
+            tag2= document.getElementById('modal');
+            tag2.classList.add('hide');
+        }
+    </script>
+</body>
+</html>

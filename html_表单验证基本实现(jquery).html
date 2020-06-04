@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .item {
+            width:250px;
+            height:60px;
+            position:relative;
+        }
+
+        .item input {
+            width:200px;
+        }
+
+        .item span {
+            position:absolute;
+            top:24px;
+            left:0px;
+            background-color:red;
+            color:white;
+            font-size:8px;
+            width:200px;
+            display: inline-block;
+        }
+
+
+    </style>
+</head>
+<body>
+    <form>
+        <div class="item">
+            <input class="a1" type="text" name="用户名"/>
+
+        </div>
+         <div class="item">
+            <input class="a1"type="password" name="密码"/>
+
+        </div>
+        <!--通过dom绑定
+        <input type="submit" value="提交" onclick="return CheckValid()"/>-->
+        <input type="submit" value="提交"/>
+
+    </form>
+    <script src="jquery.js"></script>
+    <script>
+
+
+        $(function(){
+            //当框架加载完成后,自动执行
+            BindCheckValid()
+        });
+
+
+        function BindCheckValid(){
+            $.each([11,22,33,44],function(k,v){
+                if(k==2){
+                    return false; //没有加false就是continue
+                }
+                console.log(v)
+            })
+        }
+        function BindCheckValid() {
+            $('form input').click(function () {
+                var flag=true;
+                //点击submit执行以下代码
+                 $('form .item span').remove();
+                 $('form .a1').each(function(){
+                var val=$(this).val();
+                if(val.length<=0){
+                    var name=$(this).attr('name');
+                    var tag=document.createElement('span');
+                    tag.innerText=name+'不能为空';
+                    $(this).after(tag);
+                    flag=false;
+                }
+            });
+                 return flag;
+            });
+        }
+        function CheckValid(){
+            $('form .item span').remove();
+            var flag=true;
+            //$('form input[type="text"],form input[type="password"]')
+            $('form .a1').each(function(){
+                var val=$(this).val();
+                if(val.length<=0){
+                    var name=$(this).attr('name');
+                    var tag=document.createElement('span');
+                    tag.innerText=name+'不能为空';
+                    $(this).after(tag);
+                    flag=false;
+                    return false;//用来break循环
+                }
+            });
+            return flag;
+        }
+    </script>
+</body>
+</html>

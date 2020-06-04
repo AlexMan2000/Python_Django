@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="JS%20Project/css/all.css" />
+    <style>
+        .c1:hover{
+            background-color: black;
+            cursor: pointer;
+        }
+        .c2:before{
+            content:'777';
+        }
+        .left {
+            float: left;
+        }
+        .item:after{
+            content:'.';
+            clear:both;
+            display: block;
+            visibility: hidden;
+            height:0;
+        }
+    </style>
+</head>
+<body>
+    <div class="c1">
+        aaa
+    </div>
+    <div class="c2">sss</div>
+
+    <div style="background-color: green;" class="item">
+        <div class="left" style="height: 30px;background-color: pink">1</div>
+        <div class="left">2</div>
+
+    </div>
+</body>
+</html>

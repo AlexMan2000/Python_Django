@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>
+        <a onclick="Add(this);"> + </a>
+        <input type="text" />
+    </p>
+    <script src="jquery.js"></script>
+    <script>
+        function Add(ths) {
+            var t= $(ths).parent().clone();
+            $(ths).parent().parent().append(t);
+            t.find('a').text(' - ');
+            t.find('a').attr('onclick','Remove(this)');
+        }
+
+        function Remove(ths) {
+            $(ths).parent().remove(); //remove删除本标签
+        }
+    </script>
+</body>
+</html>

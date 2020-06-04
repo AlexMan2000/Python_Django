@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="button" value="全选" onclick="CheckAll()"/>
+    <input type="button" value="反选" onclick="Reverse()"/>
+    <input type="button" value="全部取消" onclick="CancelAll()"/>
+    <input class="edit" type="button" value="进入编辑模式" onclick="Editing()"/>
+    <table border="1" >
+        <thead>
+        <tr>
+            <th>选择</th>
+            <th>主机名</th>
+            <th>端口</th>
+            <th>状态</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><input class="checkbox" type="checkbox" /></td>
+            <td class="text" edit="true">v1</td>
+            <td>v11</td>
+            <td edit="true"><select>
+                <option>在线</option>
+                <option>下线</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td><input class="checkbox" type="checkbox"/></td>
+            <td class="text" edit="true">v1</td>
+            <td>v11</td>
+            <td edit="true"><select>
+                <option>在线</option>
+                <option>下线</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td><input class="checkbox" type="checkbox"/></td>
+            <td class="text" edit="true">v1</td>
+            <td>v11</td>
+            <td edit="true"><select>
+                <option>在线</option>
+                <option>下线</option>
+            </select></td>
+        </tr>
+        </tbody>
+    </table>
+    <script src="jquery.js"></script>
+    <script>
+        function CheckAll() {
+            $('.checkbox').prop('checked',true);
+        }
+
+        function CancelAll() {
+            $('.checkbox').prop('checked',false);
+        }
+
+        function Reverse(){
+            $('input:checkbox').each(function(){
+                if($(this).prop('checked')==true){
+                    $(this).prop('checked',false)
+                }else{
+                    $(this).prop('checked',true)
+                }
+            })
+        }
+
+        function Editing() {
+            if ($('.edit').attr('value') == "进入编辑模式") {
+                $('.edit').attr('value', "退出编辑模式");
+                $('.text').each(function () {
+                    if ($(this).prev().children().prop('checked') == true) {
+                        var tag = document.createElement("input");
+                        tag.type = 'text';
+                        var innertext = $(this).text();
+                        $(this).text('');
+                        $(this).append(tag);
+                        $(this).children().prop('value', innertext);
+
+                    }
+                });
+            } else {
+                $('.edit').attr('value', "进入编辑模式");
+                $('.text').each(function () {
+                    if ($(this).prev().children().prop('checked') == true){
+                    var value = $(this).children().prop('value');
+                    $(this).children().remove();
+                    $(this).text(value);}
+
+                });
+                CancelAll();
+
+            }
+        }
+
+    </script>
+</body>
+</html>

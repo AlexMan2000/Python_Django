@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+    <input type="button" value="全选" onclick="CheckAll()"/>
+    <input type="button" value="取消" onclick="CancelAll()"/>
+    <input type="button" value="反选" onclick="ReverseAll()"/>
+    <table border="1">
+        <thead>
+            <th>序号</th>
+            <th>用户名</th>
+            <th>密码</th>
+        </thead>
+        <tbody id="tb">
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="jquery.js"></script>
+    <script>
+        function CheckAll() {
+            /*var tb = document.getElementById('tb');
+            var t=tb.children;
+            for (var i = 0; i < t.length; i++) {
+                var li = t[i].firstElementChild.firstElementChild;
+                li.checked=true;
+
+            }*/
+            $('#tb input[type="checkbox"]').prop('checked',true);
+        }
+        function CancelAll() {
+            /*var tb = document.getElementById('tb');
+            var t = tb.children;
+            for (var i = 0; i < t.length; i++) {
+                var t1 = t[i].firstElementChild.firstElementChild;
+                if (t1.checked) {
+                    t1.checked=false;
+                }*/
+            $('#tb input:checkbox').prop('checked',false);
+            }
+
+        function ReverseAll() {
+            /*var tb = document.getElementById('tb');
+            var t = tb.children;
+            for (var i = 0; i < t.length; i++) {
+                var t1 = t[i].firstElementChild.firstElementChild;
+                if(t1.checked){
+                    t1.checked=false;
+                }
+                    else{
+                        t1.checked=true;
+
+                    }
+                }*/
+            ($('#tb input:checkbox').each(function(){
+                //this 当前标签
+                //$(this)当前标签的Jquery对象
+                if($(this).prop('checked')) {
+                    $(this).prop('checked',false);
+                }else{
+                    $(this).prop('checked',true);
+                }
+
+            }))
+        }
+
+
+    </script>
+</body>
+</html>

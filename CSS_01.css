@@ -1,0 +1,204 @@
+body {
+    margin:0 ;
+
+}
+
+.w {
+    width:1400px;
+    height:50px;
+    margin:0 auto;
+
+
+}
+.li1 {
+    margin:0 auto;
+}
+
+.li2 {
+    margin:0;
+}
+
+.li1 li{
+    float:right;
+    display: block;
+    padding:8px;
+}
+
+.li1 li:hover{
+    color:green;
+    background-color: blue;
+    cursor: pointer;
+}
+
+.li2 li{
+    float:left;
+    display: block;
+    padding:8px;
+}
+.pg_header {
+    background-color: grey;
+    height:44px;
+    width:1600px;
+    opacity: 40%;
+    line-height:25px;;
+    margin:0 auto;
+}
+.title{
+
+    width:1600px;
+    display: inline-block;
+}
+.title div{
+    margin:0 auto;
+    padding-left: 200px;
+
+}
+
+.li3 {
+    margin: 0 auto;
+    line-height: 10px;
+}
+.li3 li{
+    float: left;
+    display: block;
+    padding: 20px;
+    margin-left:5px
+
+}
+.li3 li:hover {
+    cursor: pointer;
+    background-color: green;
+}
+
+.li4 {
+    float:right;
+    margin-right:0;
+    margin-top:0;
+    line-height: 50px;
+}
+
+.li4 li{
+    display: block;
+    padding-right:15px;
+    padding-left: 15px;
+    margin-bottom:15px;
+}
+
+.li4 li:hover{
+    cursor: pointer;
+    background-color: yellow;
+}
+.category {
+    height: 52px;
+
+
+}
+
+.box1{
+
+    border: 0.1px solid grey;
+    padding: 37px 70px 37px 70px;
+    width:100px;
+}
+
+.box1_li {
+    margin:0 auto;
+    padding-left: 0px;
+}
+
+.box1_li li {
+    float: left;
+    display: block;
+    margin-left: 0px;
+    padding:3px;
+    font-size: 10px;
+
+}
+
+.right_section ul {
+    display:inline-block;
+    margin:0 auto;
+    width:700px;
+    border-bottom:2px solid grey;
+    padding-right:80px;
+
+
+}
+
+
+.right_section ul li{
+    padding:10px;
+    float:left;
+    display:block;
+
+
+}
+
+.right_section {
+    position:absolute;
+    top:185px;
+    left:370px;
+    border-top:2px solid red;
+    border-bottom:1px solid grey;
+    border-left:1px solid grey;
+    border-right:1px solid grey;
+    display:inline-block;
+    width:900px;
+}
+
+.热销{
+    display:inline-block;
+    position:absolute;
+    top:660px;
+    left:130px;
+    border:1px solid grey;
+    width:200px;
+    height:40px;
+
+
+}
+.排行榜 {
+    background-color: lightgrey;
+    opacity: 0.7;
+
+}
+
+
+.商品栏 {
+    position:absolute;
+    top:440px;
+    left:370px;
+    border:1px solid grey;
+    width:900px;
+    background-color: lightgray;
+    opacity: 0.7;
+    display: inline-block;
+}
+
+.商品栏 ul{
+    display: inline-block;
+    text-align: center;
+    margin:0 auto;
+}
+
+.商品栏 ul li{
+    display:block;
+    float: left;
+    padding:5px;
+}
+
+
+.商品展示 {
+    display:inline-block;
+    position:absolute;
+    top:490px;
+    left:370px;
+    width:1000px;
+
+}
+
+.商品1 {
+    height:240px;
+    width:220px;
+    display: inline-block;
+}

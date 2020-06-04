@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .back {
+            position:fixed;
+            right:20px;
+            bottom:20px;
+            color:red;
+
+        }
+        .hide {
+            display:none;
+        }
+    </style>
+</head>
+<body onscroll="BodyScroll()">
+    <div style="height:2000px;background-color:green;"></div>
+    <div id='back' class='back hide' onclick="BackTop();">返回顶部</div>
+    <script>
+        function BackTop(){
+            document.body.scrollTop=0;  //Edge浏览器是可行的
+        }
+        function BodyScroll(){
+            var s=window.scrollY;
+            var t=document.getElementById('back');
+            if(s>=100) {
+                t.classList.remove('hide');}
+            else{
+                t.classList.add('hide');
+                }
+            }
+
+    </script>
+</body>
+</html>

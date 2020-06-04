@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin:0;
+        }
+        .icon {
+            border:5px solid red;
+            background-color: green;
+            height:100px;
+            display: block;
+            position:absolute;
+            left:0;
+            right:0;
+            top:0;
+            z-index: 0;
+        }
+        .button_01 {
+            position:fixed;
+            bottom:0;
+            right:0;
+            width:99px;
+            height:99px;
+        }
+        .a1 {
+            display:none;
+            margin:0 auto;
+            z-index: 1000;
+        }
+        .a2 {
+            border:1px solid blue;
+            margin:0 auto;
+            position:absolute;
+            top:350px;
+            left:400px;
+
+
+        }
+    </style>
+</head>
+<body>
+    <div id='i2' class="icon">777</div>
+
+    <input id='i1' class='a1 a2' type="text" />
+    <input class='button_01' type="button" value='hit me' onclick="Button01()" />
+    <script>
+        function Button01(){
+            var tag = document.getElementById('i1');
+            tag.classList.remove('a1');
+            var t = document.getElementById('i2');
+            t.classList.add('a1');
+        }
+    </script>
+</body>
+</html>
